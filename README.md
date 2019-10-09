@@ -1,2 +1,3 @@
-# Java-Eclipse project
+# Java-Chat Room Software
+# Eclipse project
 # 2019-10-9
