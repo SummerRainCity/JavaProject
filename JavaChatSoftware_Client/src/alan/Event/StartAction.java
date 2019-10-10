@@ -270,11 +270,8 @@ class SettingsGUI extends JFrame
 		this.add(ButtonOk);
 	}
 	
-	//按下“确定”时
 	protected void ButtonOkMethod() {
-		if(!JT_IPAddress.getText().contains("已使用默认地址")) {
-			IP_About.IPaddress = JT_IPAddress.getText();
-		}
+		IP_About.IPaddress = JT_IPAddress.getText();
 		this.dispose();
 	}
 
