@@ -165,7 +165,7 @@ public class ClientAction  implements ActionListener,ItemListener
 			JOptionPane.showMessageDialog(jframe, "还没上传文件的功能！", "选择文件", JOptionPane.PLAIN_MESSAGE);
 		}
 		else if(e.getActionCommand() == "界面设置(S)") {
-			GUISettingRun.SingleColumnMode(jframe).setVisible(true);//“单列模式”
+			GUISettingRun.SingleColumnMode(jframe).setVisible(true);
 		}
 		else if(e.getActionCommand() == "帮助(H)") {
 			JOptionPane.showMessageDialog(jframe, "Author：AlancoldCity\r\nTest Version：1.5\r\nSpecial Thanks：plus、CheatE\r\nEmail：AlanLw721@outlook.com","ChatRoom Test Version 1.5",JOptionPane.DEFAULT_OPTION);
