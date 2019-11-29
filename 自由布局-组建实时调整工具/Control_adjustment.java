@@ -1,7 +1,14 @@
 /**
- * 作者：@author AlancoldCity
+ * 作者：@author SummerRainCity
  * 日期：2019-11-29
- * 功能：实时调整自由布局下的组建
+ * 功能：使用键盘按键实时调整自由布局下的组建
+ * 思路：添加键盘监听器，按下按键调用组件函数setBounds(x,y,width,height)使得组件
+ * 更新自身状态。如果你尝试使用for循环去执行setBounds函数，若每次循环参数不一致，
+ * 你会发现组件的状态也会发生变化，利用此特性与键盘事件监听结合即可实时控制组件的
+ * 位置、大小。
+ *
+ * 注：由于不知道到底传入那个组件，所以使用的Component类引用接它的子类对象，使其
+ * 调整组件位置、大小时不局限于某个具体的组件。
  */
 import javax.swing.*;
 import java.awt.*;
@@ -24,8 +31,6 @@ import java.awt.event.*;
  * 使用格二： 
  * SetupMon obj = new SetupMon([传入组建:按钮|标签|文本框...], JFrame);
  * this.addKeyListener(obj);// 注册监听
- * 
- * 时间：2019年11月29日
  */
 class SetupMon extends JPanel implements KeyListener {
 	private static final long serialVersionUID = 1L;
@@ -85,7 +90,7 @@ class SetupMon extends JPanel implements KeyListener {
 			x += 2;
 			dx.setBounds(x, y, width, height);
 		}
-		System.out.println("当前组建坐标[x=" + this.x + ",y=" + this.y + "]--当前组建大小[width=" + this.width + ",height="
+		System.out.println("当前组件坐标[x=" + this.x + ",y=" + this.y + "]--当前组件大小[width=" + this.width + ",height="
 				+ this.height + "]");
 	}
 
@@ -97,16 +102,13 @@ class SetupMon extends JPanel implements KeyListener {
 
 //例子：
 public class Control_adjustment extends JFrame {
-
-	// 定义变量
-	JButton jbu = new JButton("按钮");
-	JLabel biaoqian = new JLabel("QQ");
+	JButton jbu = new JButton("按钮");//标签组件
+	JLabel biaoqian = new JLabel("标签");//按钮组件
 
 	public static void main(String[] args) {
 		new Control_adjustment();
 	}
 
-	// 构造函数
 	public Control_adjustment() {
 		this.setLayout(null);
 
@@ -115,9 +117,13 @@ public class Control_adjustment extends JFrame {
 		this.add(jbu);
 		this.add(biaoqian);
 
-		//用法
+		//用法：传入标签biaoqian
+		//SetupMon mp = new SetupMon(jbu, this);
+		//this.addKeyListener(mp);
+
+		//用法：传入按钮jbu
 		SetupMon mp = new SetupMon(jbu, this);
-		this.addKeyListener(mp);// 注册监听
+		this.addKeyListener(mp);
 
 		this.setSize(600, 300);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
