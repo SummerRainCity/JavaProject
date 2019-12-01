@@ -1,3 +1,14 @@
+package GUI控件移动测试;
+
+import java.awt.Component;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+
 /**
  * 作者：@author SummerRainCity
  * 日期：2019-11-29
@@ -10,9 +21,7 @@
  * 注：由于不知道用户传入那个组件，所以使用Component类引用接它的子类对象，使其调
  * 整组件位置、大小时不局限于某个具体的组件。
  */
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+
 
 /*
  * 目的：实现关于自由布局下，控件的大小宽高实时调整	
@@ -32,7 +41,8 @@ import java.awt.event.*;
  * SetupMon obj = new SetupMon([传入组建:按钮|标签|文本框...], JFrame);
  * this.addKeyListener(obj);// 注册监听
  */
-class SetupMon extends JPanel implements KeyListener {
+class SetupMon extends JPanel implements KeyListener 
+{
 	private static final long serialVersionUID = 1L;
 	Component dx = null;
 	int x, y, width, height;
@@ -101,7 +111,9 @@ class SetupMon extends JPanel implements KeyListener {
 }
 
 //例子：
-public class Control_adjustment extends JFrame {
+public class Control_adjustment extends JFrame 
+{
+	private static final long serialVersionUID = -8681922849627730462L;
 	JButton jbu = new JButton("按钮");//标签组件
 	JLabel biaoqian = new JLabel("标签");//按钮组件
 
