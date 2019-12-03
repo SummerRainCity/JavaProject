@@ -122,7 +122,7 @@ public class StartAction implements ActionListener
 		if(e.getActionCommand()=="登录") 
 		{
 			try {
-				jframe.setTitle("连接中...");
+				jframe.setTitle("连接中...");//IP_About.IPaddress
 				linkServer();
 			} catch (Exception e2) {
 				msg.setText("服务器未启动或网络异常！");
@@ -194,7 +194,7 @@ public class StartAction implements ActionListener
 			return;
 		}else {
 			
-			//接收来自服务器内存的好友数据
+			//接收来自服务器内存的好友数据（文件）
 			new ReceiveFile().recFile();
 			
 			UserList.Password = null;//清空本地密码（已经登录成功）

@@ -6,6 +6,5 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/EclipseProject/JLayer1.0.1/JLayer1.0.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
