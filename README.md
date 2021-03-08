@@ -1,2 +1,2 @@
-# Java-Chat Room Software | JavaSE写的一个聊天室
+# Java-Chat Room Software
 Eclipse project:2019-10-9
